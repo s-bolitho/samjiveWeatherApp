@@ -42,8 +42,9 @@ const Forecast = ({ data }) => {
                     {item.weather[0].description}
                   </label>
                   <label className="minMax">
-                    {Math.round(item.main.temp_min)} K /{" "}
-                    {Math.round(item.main.temp_max)} K
+                    {/* Used Kelvin to fahrenheit formula to change min and max temps to fahrenheit */}
+                    {Math.round(((item.main.temp_min)-273.15)*1.8+32)}°F /{" "}
+                    {Math.round(((item.main.temp_max)-273.15)*1.8+32)}°F
                   </label>
                 </div>
               </AccordionItemButton>
